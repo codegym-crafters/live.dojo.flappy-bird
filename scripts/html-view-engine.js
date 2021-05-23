@@ -6,6 +6,6 @@ function HtmlViewEngine () {
   let context = canvas.getContext('2d')
 
   this.drawBird = function (bird) {
-    context.drawImage(bird.getImage(), 10, 10)
+    context.drawImage(bird.getImage(), bird.getXPossition(), bird.getYPossition())
   }
 }
