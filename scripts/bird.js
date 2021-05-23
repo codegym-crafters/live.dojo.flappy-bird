@@ -22,4 +22,8 @@ function Bird (x, y) {
     _y += _vY
     _vY += _aY
   }
+
+  this.jump = function () {
+    _vY = -4.5
+  }
 }

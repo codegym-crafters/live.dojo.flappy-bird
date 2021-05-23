@@ -6,6 +6,10 @@ function Game () {
     _viewEngine = viewEngine
   }
 
+  this.manageJump = function () {
+    _bird.jump()
+  }
+
   this.tick = function () {
     _bird.fall()
     viewEngine.refresh()
