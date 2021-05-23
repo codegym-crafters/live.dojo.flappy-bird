@@ -8,6 +8,13 @@
     <title>Flappy Bird</title>
 </head>
 <body>
-
+<canvas height="256" id="game" width="144"></canvas>
+<script>
+  let canvas = document.getElementById('game')
+  let context = canvas.getContext('2d')
+  let birdImage = new Image(21, 21)
+  birdImage.src = 'color-bird.png'
+  context.drawImage(birdImage, 10, 10)
+</script>
 </body>
 </html>
