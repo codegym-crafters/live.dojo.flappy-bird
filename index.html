@@ -8,21 +8,19 @@
     <title>Flappy Bird</title>
     <script src="scripts/html-view-engine.js"></script>
     <script src="scripts/bird.js"></script>
+    <script src="scripts/game.js"></script>
 </head>
 <body>
 <div id="canvas-container"></div>
 <script>
+  let game = new Game()
   let viewEngine = new HtmlViewEngine('canvas-container')
-  let bird = new Bird(10, 10)
-  viewEngine.drawBird(bird)
+  game.setViewEngine(viewEngine)
+  window.requestAnimationFrame(callGameTick)
 
-  setTimeout(gameTick, 100)
-
-  function gameTick () {
-    bird.fall()
-    viewEngine.refresh()
-    viewEngine.drawBird(bird)
-    setTimeout(gameTick, 100)
+  function callGameTick () {
+    game.tick()
+    window.requestAnimationFrame(callGameTick)
   }
 </script>
 </body>
