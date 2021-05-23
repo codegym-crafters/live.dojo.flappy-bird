@@ -10,6 +10,10 @@ function HtmlViewEngine (containerId) {
   this.drawBird = function (bird) {
     _context.drawImage(bird.getImage(), bird.getXPossition(), bird.getYPossition())
   }
+  this.drawBottomPipe = function (pipe) {
+    let yPos = HEIGHT - pipe.getHeight()
+    _context.drawImage(pipe.getImage(), pipe.getXPossition(), yPos)
+  }
 
   this.refresh = function () {
     _context.clearRect(0, 0, WIDTH, HEIGHT)
