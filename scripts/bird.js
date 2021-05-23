@@ -1,6 +1,8 @@
 function Bird (x, y) {
   let _x = x
   let _y = y
+  let _vY = 1
+  let _aY = 0.2
   let birdImage = new Image(21, 21)
   birdImage.src = 'color-bird.png'
 
@@ -17,6 +19,7 @@ function Bird (x, y) {
   }
 
   this.fall = function () {
-    _y++
+    _y += _vY
+    _vY += _aY
   }
 }
