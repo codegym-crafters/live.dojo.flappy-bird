@@ -1,6 +1,4 @@
 function HtmlViewEngine (containerId, game) {
-  const WIDTH = 144
-  const HEIGHT = 256
   const BACKGROUND_URL = 'bg.png'
 
   let _canvas = initCanvas()
@@ -8,7 +6,7 @@ function HtmlViewEngine (containerId, game) {
   initContainer()
 
   this.refresh = function () {
-    _context.clearRect(0, 0, WIDTH, HEIGHT)
+    _context.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT)
     drawBird(game.getBird())
     game.getPipes().forEach(pipe => drawBottomPipe(pipe))
   }
@@ -18,14 +16,14 @@ function HtmlViewEngine (containerId, game) {
   }
 
   function drawBottomPipe (pipe) {
-    let yPos = HEIGHT - pipe.getHeight()
+    let yPos = GAME_HEIGHT - pipe.getHeight()
     _context.drawImage(pipe.getImage(), pipe.getXPossition(), yPos)
   }
 
   function initContainer () {
     let container = document.getElementById(containerId)
     container.appendChild(_canvas)
-    container.setAttribute('style', `background-image: url('${BACKGROUND_URL}'); z-index: -1;width: ${WIDTH}px;height: ${HEIGHT}px`)
+    container.setAttribute('style', `background-image: url('${BACKGROUND_URL}'); z-index: -1;width: ${GAME_WIDTH}px;height: ${GAME_HEIGHT}px`)
   }
 
   function getContext (canvas) {
@@ -34,8 +32,8 @@ function HtmlViewEngine (containerId, game) {
 
   function initCanvas () {
     let canvas = document.createElement('canvas')
-    canvas.width = 144
-    canvas.height = 256
+    canvas.width = GAME_WIDTH
+    canvas.height = GAME_HEIGHT
     return canvas
   }
 }

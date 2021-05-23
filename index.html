@@ -14,6 +14,9 @@
 <body>
 <div id="canvas-container"></div>
 <script>
+  const GAME_WIDTH = 144
+  const GAME_HEIGHT = 256
+
   let game = new Game()
   let viewEngine = new HtmlViewEngine('canvas-container', game)
   game.setViewEngine(viewEngine)
