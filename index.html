@@ -15,6 +15,15 @@
   let viewEngine = new HtmlViewEngine('canvas-container')
   let bird = new Bird(10, 10)
   viewEngine.drawBird(bird)
+
+  setTimeout(gameTick, 100)
+
+  function gameTick () {
+    bird.fall()
+    viewEngine.refresh()
+    viewEngine.drawBird(bird)
+    setTimeout(gameTick, 100)
+  }
 </script>
 </body>
 </html>

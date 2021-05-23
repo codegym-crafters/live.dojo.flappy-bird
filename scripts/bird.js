@@ -15,4 +15,8 @@ function Bird (x, y) {
   this.getImage = function () {
     return birdImage
   }
+
+  this.fall = function () {
+    _y++
+  }
 }

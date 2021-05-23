@@ -11,6 +11,10 @@ function HtmlViewEngine (containerId) {
     _context.drawImage(bird.getImage(), bird.getXPossition(), bird.getYPossition())
   }
 
+  this.refresh = function () {
+    _context.clearRect(0, 0, WIDTH, HEIGHT)
+  }
+
   function initContainer () {
     let container = document.getElementById(containerId)
     container.appendChild(_canvas)
