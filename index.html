@@ -8,9 +8,12 @@
     <title>Flappy Bird</title>
 </head>
 <body>
-<canvas height="256" id="game" width="144"></canvas>
+<div id="canvas-container"></div>
 <script>
-  let canvas = document.getElementById('game')
+  let canvas = document.createElement('canvas')
+  canvas.width = 144
+  canvas.height = 256
+  document.getElementById('canvas-container').appendChild(canvas)
   let context = canvas.getContext('2d')
   let birdImage = new Image(21, 21)
   birdImage.src = 'color-bird.png'
