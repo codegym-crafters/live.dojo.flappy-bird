@@ -21,10 +21,7 @@ function Game () {
   }
 
   this.tick = function () {
-    console.log(_pipes.length)
-    if (_pipes.length && _pipes[0].getXPossition() <= 0) {
-      _pipes = _pipes.slice(1)
-    }
+    removeOutOfScreenPipes()
     _pipes.forEach(pipe => pipe.driftingBack())
     _bird.fall()
     if (!_timeToNextPipe--) {
@@ -32,5 +29,11 @@ function Game () {
       _timeToNextPipe = Math.round(Math.random() * 25) + 75
     }
     viewEngine.refresh()
+  }
+
+  function removeOutOfScreenPipes () {
+    if (_pipes.length && _pipes[0].getXPossition() <= 0) {
+      _pipes = _pipes.slice(1)
+    }
   }
 }
