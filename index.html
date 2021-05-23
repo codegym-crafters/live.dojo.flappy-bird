@@ -15,7 +15,7 @@
 <div id="canvas-container"></div>
 <script>
   let game = new Game()
-  let viewEngine = new HtmlViewEngine('canvas-container')
+  let viewEngine = new HtmlViewEngine('canvas-container', game)
   game.setViewEngine(viewEngine)
   window.addEventListener('click', game.manageJump)
   start(game)

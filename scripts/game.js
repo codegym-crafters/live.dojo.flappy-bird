@@ -1,7 +1,9 @@
 function Game () {
   let _viewEngine
   let _bird = new Bird()
-  let _pipe = new BottomPipe(100)
+  let _pipes = [
+    new BottomPipe(100)
+  ]
 
   this.setViewEngine = function (viewEngine) {
     _viewEngine = viewEngine
@@ -11,11 +13,17 @@ function Game () {
     _bird.jump()
   }
 
+  this.getBird = function () {
+    return _bird
+  }
+
+  this.getPipes = function () {
+    return _pipes
+  }
+
   this.tick = function () {
-    _pipe.driftingBack()
+    _pipes.forEach(pipe => pipe.driftingBack())
     _bird.fall()
     viewEngine.refresh()
-    viewEngine.drawBird(_bird)
-    viewEngine.drawBottomPipe(_pipe)
   }
 }
