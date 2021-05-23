@@ -12,6 +12,7 @@ function Game () {
   }
 
   this.tick = function () {
+    _pipe.driftingBack()
     _bird.fall()
     viewEngine.refresh()
     viewEngine.drawBird(_bird)

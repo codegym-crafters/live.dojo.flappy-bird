@@ -15,4 +15,8 @@ function BottomPipe (height) {
   this.getImage = function () {
     return _image
   }
+
+  this.driftingBack = function () {
+    _x--
+  }
 }
