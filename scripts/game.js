@@ -1,6 +1,6 @@
 function Game () {
   let _viewEngine
-  let _bird = new Bird(10, 10)
+  let _bird = new Bird()
 
   this.setViewEngine = function (viewEngine) {
     _viewEngine = viewEngine

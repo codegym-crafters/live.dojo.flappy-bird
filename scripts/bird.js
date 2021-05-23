@@ -1,6 +1,6 @@
-function Bird (x, y) {
-  let _x = x
-  let _y = y
+function Bird () {
+  let _x = 10
+  let _y = 10
   let _vY = 1
   let _aY = 0.2
   let birdImage = new Image(21, 21)
