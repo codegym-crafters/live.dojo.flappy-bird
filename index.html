@@ -6,18 +6,15 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Flappy Bird</title>
+    <script src="scripts/html-view-engine.js"></script>
+    <script src="scripts/bird.js"></script>
 </head>
 <body>
 <div id="canvas-container"></div>
 <script>
-  let canvas = document.createElement('canvas')
-  canvas.width = 144
-  canvas.height = 256
-  document.getElementById('canvas-container').appendChild(canvas)
-  let context = canvas.getContext('2d')
-  let birdImage = new Image(21, 21)
-  birdImage.src = 'color-bird.png'
-  context.drawImage(birdImage, 10, 10)
+  let viewEngine = new HtmlViewEngine('canvas-container')
+  let bird = new Bird()
+  viewEngine.drawBird(bird)
 </script>
 </body>
 </html>
