@@ -16,11 +16,15 @@
   let game = new Game()
   let viewEngine = new HtmlViewEngine('canvas-container')
   game.setViewEngine(viewEngine)
-  window.requestAnimationFrame(callGameTick)
+  start(game)
 
-  function callGameTick () {
-    game.tick()
-    window.requestAnimationFrame(callGameTick)
+  function start (game) {
+    callGameTickRepeatically()
+
+    function callGameTickRepeatically () {
+      game.tick()
+      window.requestAnimationFrame(callGameTickRepeatically)
+    }
   }
 </script>
 </body>
