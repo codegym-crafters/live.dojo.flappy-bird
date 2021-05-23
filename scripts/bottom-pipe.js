@@ -21,4 +21,8 @@ function BottomPipe (x, height) {
   this.driftingBack = function () {
     _x--
   }
+
+  this.isOutOfScreen = function () {
+    return this.getXPossition() <= -IMAGE_WIDTH
+  }
 }

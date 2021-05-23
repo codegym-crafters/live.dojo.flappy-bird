@@ -32,7 +32,7 @@ function Game () {
   }
 
   function removeOutOfScreenPipes () {
-    if (_pipes.length && _pipes[0].getXPossition() <= 0) {
+    if (_pipes.length && _pipes[0].isOutOfScreen()) {
       _pipes = _pipes.slice(1)
     }
   }
