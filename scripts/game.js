@@ -7,6 +7,7 @@ function Game () {
   let _bird = new Bird()
   let _warps = []
   let _timeToNextPipe = 0
+  let _point = 0
 
   this.setViewEngine = function (viewEngine) {
     _viewEngine = viewEngine
@@ -33,6 +34,8 @@ function Game () {
   }
 
   this.tick = function () {
+    increasePointIfNeeded()
+    console.log(_point)
     removeOutOfScreenWarps()
     letAllPipeDriftingBack()
     letBirdFallingDown()
@@ -46,6 +49,18 @@ function Game () {
 
   this.getHeight = function () {
     return GAME_HEIGHT
+  }
+
+  function nextWarp () {
+    return _warps.find(warp => !warp.isOvercome())
+  }
+
+  function increasePointIfNeeded () {
+    if (!_warps.length) return
+    if (nextWarp().getXPossition() < _bird.getXPossition()) {
+      _point++
+      nextWarp().setOvercome(true)
+    }
   }
 
   function initAnotherWarpIfNeeded () {
