@@ -7,7 +7,7 @@ function Game () {
   let _bird = new Bird()
   let _warps = []
   let _timeToNextPipe = 0
-  let _point = 0
+  let _score = 0
 
   this.setViewEngine = function (viewEngine) {
     _viewEngine = viewEngine
@@ -35,7 +35,7 @@ function Game () {
 
   this.tick = function () {
     increasePointIfNeeded()
-    console.log(_point)
+    console.log(_score)
     removeOutOfScreenWarps()
     letAllPipeDriftingBack()
     letBirdFallingDown()
@@ -58,7 +58,7 @@ function Game () {
   function increasePointIfNeeded () {
     if (!_warps.length) return
     if (nextWarp().getXPossition() < _bird.getXPossition()) {
-      _point++
+      _score++
       nextWarp().setOvercome(true)
     }
   }
