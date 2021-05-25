@@ -25,7 +25,7 @@ function Game () {
   }
 
   this.getWarp = function (index) {
-    return self.getWarps()[index]
+    return _warps[index]
   }
 
   this.pollWarp = function () {
@@ -60,11 +60,11 @@ function Game () {
   }
 
   function letAllPipeDriftingBack () {
-    self.getWarps().forEach(warp => warp.driftingBack())
+    _warps.forEach(warp => warp.driftingBack())
   }
 
   function removeOutOfScreenWarps () {
-    if (!self.getWarps().length) return
+    if (!_warps.length) return
     if (self.getWarp(0).isOutOfScreen()) {
       self.pollWarp()
     }
