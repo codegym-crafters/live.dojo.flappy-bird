@@ -5,7 +5,7 @@ function Game () {
   let self = this
   let _viewEngine
   let _bird = new Bird()
-  let _pipes = []
+  let _warps = []
   let _timeToNextPipe = 0
 
   this.setViewEngine = function (viewEngine) {
@@ -20,15 +20,23 @@ function Game () {
     return _bird
   }
 
-  this.getPipes = function () {
-    return _pipes
+  this.getWarps = function () {
+    return _warps
+  }
+
+  this.getWarp = function (index) {
+    return self.getWarps()[index]
+  }
+
+  this.pollWarp = function () {
+    _warps = _warps.slice(1)
   }
 
   this.tick = function () {
-    removeOutOfScreenPipes()
+    removeOutOfScreenWarps()
     letAllPipeDriftingBack()
     letBirdFallingDown()
-    initAnotherPipeIfNeeded()
+    initAnotherWarpIfNeeded()
     viewEngine.refresh()
   }
 
@@ -40,9 +48,9 @@ function Game () {
     return GAME_HEIGHT
   }
 
-  function initAnotherPipeIfNeeded () {
+  function initAnotherWarpIfNeeded () {
     if (!_timeToNextPipe--) {
-      _pipes.push(new BottomPipe(self.getWidth()))
+      _warps.push(new Warp(self.getWidth()))
       _timeToNextPipe = Math.round(Math.random() * 25) + 75
     }
   }
@@ -52,13 +60,14 @@ function Game () {
   }
 
   function letAllPipeDriftingBack () {
-    _pipes.forEach(pipe => pipe.driftingBack())
+    self.getWarps().forEach(warp => warp.driftingBack())
   }
 
-  function removeOutOfScreenPipes () {
-    if (!_pipes.length) return
-    if (_pipes[0].isOutOfScreen()) {
-      _pipes = _pipes.slice(1)
+  function removeOutOfScreenWarps () {
+    if (!self.getWarps().length) return
+    let firstWarp = self.getWarp(0)
+    if (firstWarp.getBottomPipe().isOutOfScreen()) {
+      self.pollWarp()
     }
   }
 }

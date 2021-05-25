@@ -8,7 +8,7 @@ function HtmlViewEngine (containerId, game) {
   this.refresh = function () {
     _context.clearRect(0, 0, game.getWidth(), game.getHeight())
     drawBird(game.getBird())
-    game.getPipes().forEach(pipe => drawBottomPipe(pipe))
+    game.getWarps().forEach(warp => drawBottomPipe(warp.getBottomPipe()))
   }
 
   function drawBird (bird) {
