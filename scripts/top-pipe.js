@@ -1,7 +1,7 @@
-function TopPipe (xPossition, height) {
+function TopPipe (xPosition, height) {
   const IMAGE_WIDTH = 26
   const IMAGE_HEIGHT = 135
-  let _x = xPossition
+  let _x = xPosition
   let _height = height | Math.round(Math.random() * IMAGE_HEIGHT)
   let _image = new Image(IMAGE_WIDTH, IMAGE_HEIGHT)
   _image.src = 'top-pipe.png'
