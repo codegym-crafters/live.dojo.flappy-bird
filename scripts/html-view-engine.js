@@ -8,11 +8,19 @@ function HtmlViewEngine (containerId, game) {
   this.refresh = function () {
     _context.clearRect(0, 0, game.getWidth(), game.getHeight())
     drawBird(game.getBird())
-    game.getWarps().forEach(warp => drawBottomPipe(warp.getBottomPipe()))
+    game.getWarps().forEach(warp => {
+      drawBottomPipe(warp.getBottomPipe())
+      drawTopPipe(warp.getTopPipe())
+    })
   }
 
   function drawBird (bird) {
     _context.drawImage(bird.getImage(), bird.getXPossition(), bird.getYPossition())
+  }
+
+  function drawTopPipe (pipe) {
+    let yPos = pipe.getHeight() - pipe.getImageHeight()
+    _context.drawImage(pipe.getImage(), pipe.getXPossition(), yPos)
   }
 
   function drawBottomPipe (pipe) {

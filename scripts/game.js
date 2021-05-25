@@ -65,8 +65,7 @@ function Game () {
 
   function removeOutOfScreenWarps () {
     if (!self.getWarps().length) return
-    let firstWarp = self.getWarp(0)
-    if (firstWarp.getBottomPipe().isOutOfScreen()) {
+    if (self.getWarp(0).isOutOfScreen()) {
       self.pollWarp()
     }
   }
