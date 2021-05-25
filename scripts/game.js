@@ -34,8 +34,7 @@ function Game () {
   }
 
   this.tick = function () {
-    increasePointIfNeeded()
-    console.log(_score)
+    checkWarpOvercame()
     removeOutOfScreenWarps()
     letAllPipeDriftingBack()
     letBirdFallingDown()
@@ -51,15 +50,12 @@ function Game () {
     return GAME_HEIGHT
   }
 
-  function nextWarp () {
-    return _warps.find(warp => !warp.isOvercome())
-  }
-
-  function increasePointIfNeeded () {
+  function checkWarpOvercame () {
     if (!_warps.length) return
-    if (nextWarp().getXPossition() < _bird.getXPossition()) {
+    let nextWarp = _warps.find(warp => !warp.isOvercome())
+    if (nextWarp.getXPossition() < _bird.getXPossition()) {
       _score++
-      nextWarp().setOvercome(true)
+      nextWarp.setOvercome(true)
     }
   }
 
