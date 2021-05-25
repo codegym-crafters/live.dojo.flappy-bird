@@ -1,4 +1,8 @@
 function Game () {
+  const GAME_WIDTH = 144
+  const GAME_HEIGHT = 256
+
+  let self = this
   let _viewEngine
   let _bird = new Bird()
   let _pipes = []
@@ -19,6 +23,7 @@ function Game () {
   this.getPipes = function () {
     return _pipes
   }
+
   this.tick = function () {
     removeOutOfScreenPipes()
     letAllPipeDriftingBack()
@@ -27,9 +32,17 @@ function Game () {
     viewEngine.refresh()
   }
 
+  this.getWidth = function () {
+    return GAME_WIDTH
+  }
+
+  this.getHeight = function () {
+    return GAME_HEIGHT
+  }
+
   function initAnotherPipeIfNeeded () {
     if (!_timeToNextPipe--) {
-      _pipes.push(new BottomPipe())
+      _pipes.push(new BottomPipe(self.getWidth()))
       _timeToNextPipe = Math.round(Math.random() * 25) + 75
     }
   }

@@ -1,7 +1,7 @@
-function BottomPipe (x, height) {
+function BottomPipe (xPossition, height) {
   const IMAGE_WIDTH = 26
   const IMAGE_HEIGHT = 121
-  let _x = x | GAME_WIDTH
+  let _x = xPossition
   let _height = height | Math.round(Math.random() * IMAGE_HEIGHT)
   let _image = new Image(IMAGE_WIDTH, IMAGE_HEIGHT)
   _image.src = 'bottom-pipe.png'
