@@ -39,6 +39,9 @@ const SpriteFactory = new (function () {
     if (!topPipeSprite) {
       topPipeSprite = new Image(width, length)
       topPipeSprite.src = SPRITES.TOP_PIPE.src
+    } else {
+      topPipeSprite.width = width
+      topPipeSprite.height = length
     }
     return topPipeSprite
   }
@@ -47,6 +50,9 @@ const SpriteFactory = new (function () {
     if (!bottomPipeSprite) {
       bottomPipeSprite = new Image(width, length)
       bottomPipeSprite.src = SPRITES.BOTTOM_PIPE.src
+    } else {
+      bottomPipeSprite.width = width
+      bottomPipeSprite.height = length
     }
     return bottomPipeSprite
   }
