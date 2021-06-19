@@ -2,6 +2,7 @@ function HtmlViewEngine (containerId, game) {
   const BACKGROUND_URL = 'imgs/bg.png'
   const BIRD_IMG = 'imgs/color-bird.png'
   const BOTTOM_PIPE_IMG = 'imgs/bottom-pipe.png'
+  const TOP_PIPE_IMG = 'imgs/top-pipe.png'
 
   let _canvas = initCanvas()
   let _context = getContext(_canvas)
@@ -23,8 +24,10 @@ function HtmlViewEngine (containerId, game) {
   }
 
   function drawTopPipe (pipe) {
+    let img = new Image(pipe.getWidth(), pipe.getHeight())
+    img.src = TOP_PIPE_IMG
     let yPos = pipe.getHeight() - pipe.getImageHeight()
-    _context.drawImage(pipe.getImage(), pipe.getXPossition(), yPos)
+    _context.drawImage(img, pipe.getXPossition(), yPos)
   }
 
   function drawBottomPipe (pipe) {

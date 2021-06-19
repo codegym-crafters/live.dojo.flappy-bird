@@ -1,13 +1,15 @@
 function TopPipe (xPosition, height) {
-  const IMAGE_WIDTH = 26
-  const IMAGE_HEIGHT = 135
+  const MAX_HEIGHT = 135
   let _x = xPosition
-  let _height = height | Math.round(Math.random() * IMAGE_HEIGHT)
-  let _image = new Image(IMAGE_WIDTH, IMAGE_HEIGHT)
-  _image.src = 'imgs/top-pipe.png'
+  let _width = 26
+  let _height = height | Math.round(Math.random() * MAX_HEIGHT)
 
   this.getXPossition = function () {
     return _x
+  }
+
+  this.getWidth = function () {
+    return _width
   }
 
   this.getHeight = function () {
@@ -23,14 +25,14 @@ function TopPipe (xPosition, height) {
   }
 
   this.isOutOfScreen = function () {
-    return this.getXPossition() <= -IMAGE_WIDTH
+    return this.getXPossition() <= -_width
   }
 
   this.getImageWidth = function () {
-    return IMAGE_WIDTH
+    return _width
   }
 
   this.getImageHeight = function () {
-    return IMAGE_HEIGHT
+    return _height
   }
 }
