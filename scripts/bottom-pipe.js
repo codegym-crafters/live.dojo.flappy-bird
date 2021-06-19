@@ -1,7 +1,7 @@
-function BottomPipe (xPosition, height) {
+function BottomPipe (xPosition, lenth) {
   const MAX_HEIGHT = 121
   let _x = xPosition
-  let _height = height | Math.round(Math.random() * MAX_HEIGHT)
+  let _length = lenth | Math.round(Math.random() * MAX_HEIGHT)
   let _width = 26
 
   this.getXPossition = function () {
@@ -9,15 +9,15 @@ function BottomPipe (xPosition, height) {
   }
 
   this.getHeight = function () {
-    return _height
+    return _length
   }
 
   this.getWidth = function () {
     return _width
   }
 
-  this.getHeight = function () {
-    return _height
+  this.getLength = function () {
+    return _length
   }
 
   this.driftingBack = function () {

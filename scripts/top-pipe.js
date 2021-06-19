@@ -1,8 +1,8 @@
-function TopPipe (xPosition, height) {
-  const MAX_HEIGHT = 135
+function TopPipe (xPosition, length) {
+  const MAX_LENGTH = 135
   let _x = xPosition
   let _width = 26
-  let _height = height | Math.round(Math.random() * MAX_HEIGHT)
+  let _length = length | Math.round(Math.random() * MAX_LENGTH)
 
   this.getXPossition = function () {
     return _x
@@ -12,8 +12,8 @@ function TopPipe (xPosition, height) {
     return _width
   }
 
-  this.getHeight = function () {
-    return _height
+  this.getLength = function () {
+    return _length
   }
 
   this.getImage = function () {
@@ -33,6 +33,6 @@ function TopPipe (xPosition, height) {
   }
 
   this.getImageHeight = function () {
-    return _height
+    return _length
   }
 }

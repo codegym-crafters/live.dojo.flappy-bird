@@ -26,16 +26,16 @@ function HtmlViewEngine (containerId, game) {
   }
 
   function drawTopPipe (pipe) {
-    let img = new Image(pipe.getWidth(), pipe.getHeight())
+    let img = new Image(pipe.getWidth(), pipe.getLength())
     img.src = SPRITES.TOP_PIPE
-    let yPos = pipe.getHeight() - pipe.getImageHeight()
+    let yPos = pipe.getLength() - pipe.getImageHeight()
     _context.drawImage(img, pipe.getXPossition(), yPos)
   }
 
   function drawBottomPipe (pipe) {
-    let img = new Image(pipe.getWidth(), pipe.getHeight())
+    let img = new Image(pipe.getWidth(), pipe.getLength())
     img.src = SPRITES.BOTTOM_PIPE
-    let yPos = game.getHeight() - pipe.getHeight()
+    let yPos = game.getHeight() - pipe.getLength()
     _context.drawImage(img, pipe.getXPossition(), yPos)
   }
 
