@@ -3,8 +3,6 @@ function Bird () {
   let _y = 10
   let _vY = 1
   let _aY = 0.2
-  let birdImage = new Image(21, 21)
-  birdImage.src = 'imgs/color-bird.png'
 
   this.getXPossition = function () {
     return _x
@@ -12,10 +10,6 @@ function Bird () {
 
   this.getYPossition = function () {
     return _y
-  }
-
-  this.getImage = function () {
-    return birdImage
   }
 
   this.fall = function () {

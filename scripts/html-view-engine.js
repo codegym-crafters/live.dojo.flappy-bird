@@ -1,5 +1,7 @@
 function HtmlViewEngine (containerId, game) {
   const BACKGROUND_URL = 'imgs/bg.png'
+  const BIRD_IMAGE = new Image(21, 21)
+  BIRD_IMAGE.src = 'imgs/color-bird.png'
 
   let _canvas = initCanvas()
   let _context = getContext(_canvas)
@@ -15,7 +17,7 @@ function HtmlViewEngine (containerId, game) {
   }
 
   function drawBird (bird) {
-    _context.drawImage(bird.getImage(), bird.getXPossition(), bird.getYPossition())
+    _context.drawImage(BIRD_IMAGE, bird.getXPossition(), bird.getYPossition())
   }
 
   function drawTopPipe (pipe) {
