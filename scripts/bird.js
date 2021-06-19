@@ -4,7 +4,7 @@ function Bird () {
   let _vY = 1
   let _aY = 0.2
   let birdImage = new Image(21, 21)
-  birdImage.src = 'color-bird.png'
+  birdImage.src = 'imgs/color-bird.png'
 
   this.getXPossition = function () {
     return _x

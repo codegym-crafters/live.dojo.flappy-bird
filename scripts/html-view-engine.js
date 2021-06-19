@@ -1,5 +1,5 @@
 function HtmlViewEngine (containerId, game) {
-  const BACKGROUND_URL = 'bg.png'
+  const BACKGROUND_URL = 'imgs/bg.png'
 
   let _canvas = initCanvas()
   let _context = getContext(_canvas)

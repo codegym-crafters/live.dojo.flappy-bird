@@ -4,7 +4,7 @@ function TopPipe (xPosition, height) {
   let _x = xPosition
   let _height = height | Math.round(Math.random() * IMAGE_HEIGHT)
   let _image = new Image(IMAGE_WIDTH, IMAGE_HEIGHT)
-  _image.src = 'top-pipe.png'
+  _image.src = 'imgs/top-pipe.png'
 
   this.getXPossition = function () {
     return _x
