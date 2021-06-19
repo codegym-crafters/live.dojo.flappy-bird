@@ -60,19 +60,19 @@ function HtmlViewEngine (containerId, game) {
 
   function drawBird (bird) {
     let img = SpriteFactory.createBirdSprite(bird.getWidth(), bird.getHeight())
-    _context.drawImage(img, bird.getXPossition(), bird.getYPossition())
+    _context.drawImage(img, bird.getXPosition(), bird.getYPosition())
   }
 
   function drawTopPipe (pipe) {
     let img = SpriteFactory.createTopPipeSprite(pipe.width, pipe.height)
     let yPos = pipe.getLength() - SPRITES.TOP_PIPE.height
-    _context.drawImage(img, pipe.getXPossition(), yPos)
+    _context.drawImage(img, pipe.getXPosition(), yPos)
   }
 
   function drawBottomPipe (pipe) {
     let img = SpriteFactory.createBottomPipeSprite(pipe.getWidth(), pipe.getLength())
     let yPos = game.getHeight() - pipe.getLength()
-    _context.drawImage(img, pipe.getXPossition(), yPos)
+    _context.drawImage(img, pipe.getXPosition(), yPos)
   }
 
   function initContainer () {

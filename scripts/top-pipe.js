@@ -4,7 +4,7 @@ function TopPipe (xPosition, length) {
   let _width = 26
   let _length = length | Math.round(Math.random() * MAX_LENGTH)
 
-  this.getXPossition = function () {
+  this.getXPosition = function () {
     return _x
   }
 
@@ -25,7 +25,7 @@ function TopPipe (xPosition, length) {
   }
 
   this.isOutOfScreen = function () {
-    return this.getXPossition() <= -_width
+    return this.getXPosition() <= -_width
   }
 
   this.getImageWidth = function () {

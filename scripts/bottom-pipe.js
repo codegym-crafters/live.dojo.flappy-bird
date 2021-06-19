@@ -4,7 +4,7 @@ function BottomPipe (xPosition, lenth) {
   let _length = lenth | Math.round(Math.random() * MAX_HEIGHT)
   let _width = 26
 
-  this.getXPossition = function () {
+  this.getXPosition = function () {
     return _x
   }
 
@@ -25,6 +25,6 @@ function BottomPipe (xPosition, lenth) {
   }
 
   this.isOutOfScreen = function () {
-    return this.getXPossition() <= -_width
+    return this.getXPosition() <= -_width
   }
 }

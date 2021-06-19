@@ -53,7 +53,7 @@ function Game () {
   function checkWarpOvercame () {
     if (!_warps.length) return
     let nextWarp = _warps.find(warp => !warp.isOvercome())
-    if (nextWarp.getXPossition() < _bird.getXPossition()) {
+    if (nextWarp.getXPosition() < _bird.getXPosition()) {
       _score++
       nextWarp.setOvercome(true)
     }

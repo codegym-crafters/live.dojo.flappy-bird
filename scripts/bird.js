@@ -6,11 +6,11 @@ function Bird () {
   let _width = 21
   let _height = 21
 
-  this.getXPossition = function () {
+  this.getXPosition = function () {
     return _x
   }
 
-  this.getYPossition = function () {
+  this.getYPosition = function () {
     return _y
   }
 

@@ -1,11 +1,11 @@
-function Warp (xPossition, aperture) {
-  let _x = xPossition
+function Warp (xPosition, aperture) {
+  let _x = xPosition
   let _aperture = aperture
-  let _topPipe = new TopPipe(xPossition)
-  let _bottomPipe = new BottomPipe(xPossition)
+  let _topPipe = new TopPipe(xPosition)
+  let _bottomPipe = new BottomPipe(xPosition)
   let _isOvercome = false
 
-  this.getXPossition = function () {
+  this.getXPosition = function () {
     return _x
   }
 
