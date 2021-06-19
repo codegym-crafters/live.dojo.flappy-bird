@@ -1,10 +1,8 @@
 function BottomPipe (xPosition, height) {
-  const IMAGE_WIDTH = 26
-  const IMAGE_HEIGHT = 121
+  const MAX_HEIGHT = 121
   let _x = xPosition
-  let _height = height | Math.round(Math.random() * IMAGE_HEIGHT)
-  let _image = new Image(IMAGE_WIDTH, IMAGE_HEIGHT)
-  _image.src = 'imgs/bottom-pipe.png'
+  let _height = height | Math.round(Math.random() * MAX_HEIGHT)
+  let _width = 26
 
   this.getXPossition = function () {
     return _x
@@ -14,8 +12,12 @@ function BottomPipe (xPosition, height) {
     return _height
   }
 
-  this.getImage = function () {
-    return _image
+  this.getWidth = function () {
+    return _width
+  }
+
+  this.getHeight = function () {
+    return _height
   }
 
   this.driftingBack = function () {
@@ -23,6 +25,6 @@ function BottomPipe (xPosition, height) {
   }
 
   this.isOutOfScreen = function () {
-    return this.getXPossition() <= -IMAGE_WIDTH
+    return this.getXPossition() <= -_width
   }
 }
