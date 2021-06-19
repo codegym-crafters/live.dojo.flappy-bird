@@ -3,6 +3,8 @@ function Bird () {
   let _y = 10
   let _vY = 1
   let _aY = 0.2
+  let _width = 21
+  let _height = 21
 
   this.getXPossition = function () {
     return _x
@@ -10,6 +12,14 @@ function Bird () {
 
   this.getYPossition = function () {
     return _y
+  }
+
+  this.getWidth = function () {
+    return _width
+  }
+
+  this.getHeight = function () {
+    return _height
   }
 
   this.fall = function () {
