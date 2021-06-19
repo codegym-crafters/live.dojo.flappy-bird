@@ -25,22 +25,30 @@ const SPRITES = {
 Object.freeze(SPRITES)
 
 const SpriteFactory = new (function () {
+  let birdSprite, topPipeSprite, bottomPipeSprite
+
   this.createBirdSprite = function (width, heigh) {
-    let img = new Image(width, heigh)
-    img.src = SPRITES.BIRD.src
-    return img
+    if (!birdSprite) {
+      birdSprite = new Image(width, heigh)
+      birdSprite.src = SPRITES.BIRD.src
+    }
+    return birdSprite
   }
 
   this.createTopPipeSprite = function (width, length) {
-    let img = new Image(width, length)
-    img.src = SPRITES.TOP_PIPE.src
-    return img
+    if (!topPipeSprite) {
+      topPipeSprite = new Image(width, length)
+      topPipeSprite.src = SPRITES.TOP_PIPE.src
+    }
+    return topPipeSprite
   }
 
   this.createBottomPipeSprite = function (width, length) {
-    let img = new Image(width, length)
-    img.src = SPRITES.BOTTOM_PIPE.src
-    return img
+    if (!bottomPipeSprite) {
+      bottomPipeSprite = new Image(width, length)
+      bottomPipeSprite.src = SPRITES.BOTTOM_PIPE.src
+    }
+    return bottomPipeSprite
   }
 })
 
