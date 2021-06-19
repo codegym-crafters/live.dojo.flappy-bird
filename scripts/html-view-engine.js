@@ -1,9 +1,48 @@
+'use strict'
+
 const SPRITES = {
-  BACKGROUND: 'imgs/bg.png',
-  BIRD: 'imgs/color-bird.png',
-  BOTTOM_PIPE: 'imgs/bottom-pipe.png',
-  TOP_PIPE: 'imgs/top-pipe.png'
+  BACKGROUND: {
+    src: 'imgs/bg.png',
+    width: 144,
+    height: 256
+  },
+  BIRD: {
+    src: 'imgs/color-bird.png',
+    width: 21,
+    height: 21
+  },
+  BOTTOM_PIPE: {
+    src: 'imgs/bottom-pipe.png',
+    width: 26,
+    height: 121
+  },
+  TOP_PIPE: {
+    src: 'imgs/top-pipe.png',
+    width: 26,
+    height: 135
+  }
 }
+Object.freeze(SPRITES)
+
+const SpriteFactory = new (function () {
+  this.createBirdSprite = function (width, heigh) {
+    let img = new Image(width, heigh)
+    img.src = SPRITES.BIRD.src
+    return img
+  }
+
+  this.createTopPipeSprite = function (width, length) {
+    let img = new Image(width, length)
+    img.src = SPRITES.TOP_PIPE.src
+    return img
+  }
+
+  this.createBottomPipeSprite = function (width, length) {
+    let img = new Image(width, length)
+    img.src = SPRITES.BOTTOM_PIPE.src
+    return img
+  }
+})
 
 function HtmlViewEngine (containerId, game) {
   let _canvas = initCanvas()
@@ -20,21 +59,18 @@ function HtmlViewEngine (containerId, game) {
   }
 
   function drawBird (bird) {
-    let img = new Image(bird.getWidth(), bird.getHeight())
-    img.src = SPRITES.BIRD
+    let img = SpriteFactory.createBirdSprite(bird.getWidth(), bird.getHeight())
     _context.drawImage(img, bird.getXPossition(), bird.getYPossition())
   }
 
   function drawTopPipe (pipe) {
-    let img = new Image(pipe.getWidth(), pipe.getLength())
-    img.src = SPRITES.TOP_PIPE
-    let yPos = pipe.getLength() - pipe.getImageHeight()
+    let img = SpriteFactory.createTopPipeSprite(pipe.width, pipe.height)
+    let yPos = pipe.getLength() - SPRITES.TOP_PIPE.height
     _context.drawImage(img, pipe.getXPossition(), yPos)
   }
 
   function drawBottomPipe (pipe) {
-    let img = new Image(pipe.getWidth(), pipe.getLength())
-    img.src = SPRITES.BOTTOM_PIPE
+    let img = SpriteFactory.createBottomPipeSprite(pipe.getWidth(), pipe.getLength())
     let yPos = game.getHeight() - pipe.getLength()
     _context.drawImage(img, pipe.getXPossition(), yPos)
   }
@@ -42,7 +78,7 @@ function HtmlViewEngine (containerId, game) {
   function initContainer () {
     let container = document.getElementById(containerId)
     container.appendChild(_canvas)
-    container.setAttribute('style', `background-image: url('${SPRITES.BACKGROUND}'); z-index: -1;width: ${game.getWidth()}px;height: ${game.getHeight()}px`)
+    container.setAttribute('style', `background-image: url('${SPRITES.BACKGROUND.src}'); z-index: -1;width: ${game.getWidth()}px;height: ${game.getHeight()}px`)
   }
 
   function getContext (canvas) {
