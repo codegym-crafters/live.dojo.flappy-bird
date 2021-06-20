@@ -1,4 +1,6 @@
-function BottomPipe (xPosition, lenth) {
+'use strict'
+
+export function BottomPipe (xPosition, lenth) {
   const MAX_HEIGHT = 121
   let _x = xPosition
   let _length = lenth | Math.round(Math.random() * MAX_HEIGHT)

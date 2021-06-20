@@ -1,4 +1,9 @@
-function Game () {
+'use strict'
+
+import { Bird } from './bird'
+import { Warp } from './warp'
+
+export function Game () {
   const GAME_WIDTH = 144
   const GAME_HEIGHT = 256
 

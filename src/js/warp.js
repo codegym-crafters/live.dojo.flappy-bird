@@ -1,4 +1,9 @@
-function Warp (xPosition, aperture) {
+'use strict'
+
+import { TopPipe } from './top-pipe'
+import { BottomPipe } from './bottom-pipe'
+
+export function Warp (xPosition, aperture) {
   let _x = xPosition
   let _aperture = aperture
   let _topPipe = new TopPipe(xPosition)

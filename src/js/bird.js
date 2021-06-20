@@ -1,4 +1,4 @@
-function Bird () {
+export function Bird () {
   let _x = 10
   let _y = 10
   let _vY = 1

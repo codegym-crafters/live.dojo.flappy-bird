@@ -1,4 +1,6 @@
-function TopPipe (xPosition, length) {
+'use strict'
+
+export function TopPipe (xPosition, length) {
   const MAX_LENGTH = 135
   let _x = xPosition
   let _width = 26
