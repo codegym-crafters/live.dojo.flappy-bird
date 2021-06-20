@@ -8,6 +8,16 @@ module.exports = {
     path: __dirname + '/build/dist',
     filename: '[name].bundle.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
+    ],
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',

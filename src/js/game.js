@@ -44,7 +44,7 @@ export function Game () {
     letAllPipeDriftingBack()
     letBirdFallingDown()
     initAnotherWarpIfNeeded()
-    viewEngine.refresh()
+    _viewEngine.refresh()
   }
 
   this.getWidth = function () {

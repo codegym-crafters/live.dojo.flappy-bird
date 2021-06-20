@@ -1,23 +1,28 @@
 'use strict'
 
+import BACKGROUND from '../assets/images/bg.png'
+import COLORED_BIRD from '../assets/images/color-bird.png'
+import TOP_PIPE from '../assets/images/top-pipe.png'
+import BOTTOM_PIPE from '../assets/images/bottom-pipe.png'
+
 const SPRITES = {
   BACKGROUND: {
-    src: 'imgs/bg.png',
+    src: BACKGROUND,
     width: 144,
     height: 256
   },
   BIRD: {
-    src: 'imgs/color-bird.png',
+    src: COLORED_BIRD,
     width: 21,
     height: 21
   },
   BOTTOM_PIPE: {
-    src: 'imgs/bottom-pipe.png',
+    src: BOTTOM_PIPE,
     width: 26,
     height: 121
   },
   TOP_PIPE: {
-    src: 'imgs/top-pipe.png',
+    src: TOP_PIPE,
     width: 26,
     height: 135
   }
