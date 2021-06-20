@@ -59,7 +59,6 @@ const SpriteFactory = new (function () {
 })
 
 export function HtmlViewEngine (containerId, game) {
-  console.log('hello')
   let _canvas = initCanvas()
   let _context = getContext(_canvas)
   initContainer()
